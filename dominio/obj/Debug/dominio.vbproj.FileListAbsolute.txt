@@ -1,0 +1,10 @@
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\bin\Debug\dominio.dll
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\bin\Debug\dominio.pdb
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\bin\Debug\dominio.xml
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.vbproj.AssemblyReference.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.Resources.resources
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.vbproj.GenerateResource.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.vbproj.CoreCompileInputs.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.dll
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.xml
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\dominio\obj\Debug\dominio.pdb

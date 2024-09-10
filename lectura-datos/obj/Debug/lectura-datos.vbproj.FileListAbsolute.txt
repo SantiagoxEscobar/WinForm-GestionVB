@@ -1,0 +1,14 @@
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\lectura-datos.dll
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\lectura-datos.pdb
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\lectura-datos.xml
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\dominio.dll
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\dominio.pdb
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\bin\Debug\dominio.xml
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.vbproj.AssemblyReference.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura_datos.Resources.resources
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.vbproj.GenerateResource.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.vbproj.CoreCompileInputs.cache
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.vbproj.CopyComplete
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.dll
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.xml
+F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.pdb

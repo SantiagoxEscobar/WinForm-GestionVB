@@ -4,7 +4,7 @@ Public Class LecturaVentasItem
         Dim lista As New List(Of VentasItem)
         Dim datos As New AccesoDatos()
         Try
-            datos.SetearConsulta("SELECT P.Nombre, P.Categoria, VI.ID, VI.PrecioUnitario, VI.Cantidad, VI.PrecioTotal FROM ventasItems VI INNER JOIN productos P ON P.ID = VI.IDProducto WHERE VI.IDVenta = @ID")
+            datos.SetearConsulta("SELECT P.ID AS 'IDProducto', P.Nombre, VI.ID AS 'ID', VI.PrecioUnitario, VI.Cantidad, VI.PrecioTotal FROM ventasItems VI INNER JOIN productos P ON P.ID = VI.IDProducto WHERE VI.IDVenta = @ID")
             datos.SetearParametro("@ID", seleccionado)
             datos.EjecutarLectura()
 
@@ -16,6 +16,9 @@ Public Class LecturaVentasItem
                 aux.preciototal = CDec(datos.Lector("PrecioTotal"))
 
                 aux.Producto = New Producto()
+                If Not IsDBNull(datos.Lector("IDProducto")) Then
+                    aux.Producto.id = CInt(datos.Lector("IDProducto"))
+                End If
                 If Not IsDBNull(datos.Lector("Nombre")) Then
                     aux.Producto.nombre = CStr(datos.Lector("Nombre"))
                 End If
@@ -31,42 +34,11 @@ Public Class LecturaVentasItem
         End Try
     End Function
 
-    Public Function seleccionar(seleccionado As Integer) As List(Of VentasItem)
-        Dim lista As New List(Of VentasItem)
-        Dim datos As New AccesoDatos()
-        Try
-            datos.SetearConsulta("SELECT P.Nombre, P.Categoria, VI.ID, VI.PrecioUnitario, VI.Cantidad, VI.PrecioTotal FROM ventasItems VI INNER JOIN productos P ON P.ID = VI.IDProducto WHERE VI.ID = @ID")
-            datos.SetearParametro("@ID", seleccionado)
-            datos.EjecutarLectura()
-
-            While datos.Lector.Read()
-                Dim aux As New VentasItem()
-                aux.id = CInt(datos.Lector("ID"))
-                aux.preciounitario = CDec(datos.Lector("PrecioUnitario"))
-                aux.cantidad = CDec(datos.Lector("Cantidad"))
-                aux.preciototal = CDec(datos.Lector("PrecioTotal"))
-
-                aux.Producto = New Producto()
-                If Not IsDBNull(datos.Lector("Nombre")) Then
-                    aux.Producto.nombre = CStr(datos.Lector("Nombre"))
-                End If
-
-                lista.Add(aux)
-            End While
-
-            Return lista
-        Catch ex As Exception
-            Throw ex
-        Finally
-
-        End Try
-    End Function
-
-    Public Sub agregar(nuevo As VentasItem)
+    Public Sub agregar(nuevo As VentasItem, idVenta As Integer)
         Dim datos As New AccesoDatos()
         Try
             datos.SetearConsulta("INSERT INTO ventasitems(IDVenta, IDProducto, PrecioUnitario, Cantidad ,PrecioTotal) VALUES (@IDVenta, @IDProducto, @PrecioUnitario, @Cantidad, @PrecioTotal)")
-            datos.SetearParametro("@IDVenta", nuevo.venta.id)
+            datos.SetearParametro("@IDVenta", idVenta)
             datos.SetearParametro("@IDProducto", nuevo.Producto.id)
             datos.SetearParametro("@PrecioUnitario", nuevo.preciounitario)
             datos.SetearParametro("@Cantidad", nuevo.cantidad)

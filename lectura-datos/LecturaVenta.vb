@@ -24,6 +24,26 @@ Public Class LecturaVenta
 
         End Try
     End Function
+
+    Public Function listarUltimo() As Integer
+        Dim datos As New AccesoDatos()
+        Dim ultimoId As Integer = 0
+        Try
+            datos.SetearConsulta("SELECT TOP(1) ID FROM ventas ORDER BY ID DESC")
+            datos.EjecutarLectura()
+
+            While datos.Lector.Read()
+                ultimoId = CInt(datos.Lector("ID"))
+            End While
+
+            Return ultimoId
+        Catch ex As Exception
+            Throw ex
+        Finally
+            datos.CerrarConexion()
+        End Try
+    End Function
+
     Public Sub agregar(nuevo As Venta)
         Dim datos As New AccesoDatos()
         Try

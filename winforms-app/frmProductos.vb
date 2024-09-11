@@ -101,20 +101,24 @@ Public Class frmProductos
         If rbIdProductos.Checked Then
             If IsNumeric(filtro) Then
                 listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.id = filtro)
+            Else
+                listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro))
             End If
-        ElseIf rbIdProductos.Checked Then
+        ElseIf rbNombreProductos.Checked Then
             listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.nombre.ToUpper.Contains(filtro.ToUpper()) OrElse x.nombre.ToLower.Contains(filtro.ToLower()))
         ElseIf rbPrecioProductos.Checked Then
             If IsNumeric(filtro) Then
                 listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.precio = filtro)
+            Else
+                listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.precio.ToString().ToUpper().Contains(filtro))
             End If
         ElseIf rbCategoriaProductos.Checked Then
             listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.categoria.ToUpper.Contains(filtro.ToUpper()) OrElse x.categoria.ToLower.Contains(filtro.ToLower()))
         Else
             listaFiltrada = listaLecturaProductos.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro) OrElse
-                                                        x.nombre.ToUpper().Contains(filtro) OrElse
+                                                        x.nombre.ToUpper().Contains(filtro) OrElse x.nombre.ToLower.Contains(filtro.ToLower()) OrElse
                                                         x.precio.ToString().ToUpper().Contains(filtro) OrElse
-                                                        x.categoria.ToUpper().Contains(filtro))
+                                                        x.categoria.ToUpper().Contains(filtro) OrElse x.categoria.ToLower.Contains(filtro.ToLower()))
         End If
         listaLecturaProductos = listaFiltrada
     End Sub
@@ -123,9 +127,29 @@ Public Class frmProductos
         Dim listaFiltrada As List(Of Producto)
         Dim opcion As String = cbxOrdenarProductos.SelectedItem.ToString()
         If opcion = "Ascendente" Then
-            listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.id).ToList()
+            If rbIdProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.id).ToList()
+            ElseIf rbNombreProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.nombre).ToList()
+            ElseIf rbPrecioProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.precio).ToList()
+            ElseIf rbCategoriaProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.categoria).ToList()
+            Else
+                listaFiltrada = listaLecturaProductos.OrderBy(Function(x) x.id).ToList()
+            End If
         ElseIf opcion = "Descendente" Then
-            listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.id).ToList()
+            If rbIdProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.id).ToList()
+            ElseIf rbNombreProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.nombre).ToList()
+            ElseIf rbPrecioProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.precio).ToList()
+            ElseIf rbCategoriaProductos.Checked Then
+                listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.categoria).ToList()
+            Else
+                listaFiltrada = listaLecturaProductos.OrderByDescending(Function(x) x.id).ToList()
+            End If
         Else
             Return
         End If

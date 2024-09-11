@@ -26,8 +26,8 @@ Partial Class frmVentasEditar
         Me.btnCancelarVentas = New System.Windows.Forms.Button()
         Me.lblProductos = New System.Windows.Forms.Label()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
-        Me.btnEliminarProducto = New System.Windows.Forms.Button()
-        Me.btnAgregarProducto = New System.Windows.Forms.Button()
+        Me.btnEliminarListaProducto = New System.Windows.Forms.Button()
+        Me.btnAgregarListaProducto = New System.Windows.Forms.Button()
         Me.lblDatosVenta = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.lblTotal = New System.Windows.Forms.Label()
@@ -52,6 +52,8 @@ Partial Class frmVentasEditar
         Me.btnEditarVentas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnEditarVentas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEditarVentas.FlatAppearance.BorderSize = 0
+        Me.btnEditarVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEditarVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEditarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditarVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditarVentas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
@@ -99,45 +101,44 @@ Partial Class frmVentasEditar
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.dgvProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvProductos.Location = New System.Drawing.Point(30, 66)
         Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvProductos.Size = New System.Drawing.Size(410, 319)
         Me.dgvProductos.TabIndex = 28
         '
-        'btnEliminarProducto
+        'btnEliminarListaProducto
         '
-        Me.btnEliminarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEliminarProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnEliminarProducto.FlatAppearance.BorderSize = 0
-        Me.btnEliminarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.btnEliminarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnEliminarProducto.Location = New System.Drawing.Point(150, 410)
-        Me.btnEliminarProducto.Name = "btnEliminarProducto"
-        Me.btnEliminarProducto.Size = New System.Drawing.Size(100, 30)
-        Me.btnEliminarProducto.TabIndex = 31
-        Me.btnEliminarProducto.Text = "Eliminar"
-        Me.btnEliminarProducto.UseVisualStyleBackColor = False
+        Me.btnEliminarListaProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEliminarListaProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnEliminarListaProducto.FlatAppearance.BorderSize = 0
+        Me.btnEliminarListaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminarListaProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarListaProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnEliminarListaProducto.Location = New System.Drawing.Point(150, 410)
+        Me.btnEliminarListaProducto.Name = "btnEliminarListaProducto"
+        Me.btnEliminarListaProducto.Size = New System.Drawing.Size(100, 30)
+        Me.btnEliminarListaProducto.TabIndex = 31
+        Me.btnEliminarListaProducto.Text = "Eliminar"
+        Me.btnEliminarListaProducto.UseVisualStyleBackColor = False
         '
-        'btnAgregarProducto
+        'btnAgregarListaProducto
         '
-        Me.btnAgregarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.btnAgregarProducto.FlatAppearance.BorderSize = 0
-        Me.btnAgregarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.btnAgregarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnAgregarProducto.Location = New System.Drawing.Point(30, 410)
-        Me.btnAgregarProducto.Name = "btnAgregarProducto"
-        Me.btnAgregarProducto.Size = New System.Drawing.Size(100, 30)
-        Me.btnAgregarProducto.TabIndex = 34
-        Me.btnAgregarProducto.Text = "Agregar"
-        Me.btnAgregarProducto.UseVisualStyleBackColor = False
+        Me.btnAgregarListaProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregarListaProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.btnAgregarListaProducto.FlatAppearance.BorderSize = 0
+        Me.btnAgregarListaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarListaProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarListaProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnAgregarListaProducto.Location = New System.Drawing.Point(30, 410)
+        Me.btnAgregarListaProducto.Name = "btnAgregarListaProducto"
+        Me.btnAgregarListaProducto.Size = New System.Drawing.Size(100, 30)
+        Me.btnAgregarListaProducto.TabIndex = 34
+        Me.btnAgregarListaProducto.Text = "Agregar"
+        Me.btnAgregarListaProducto.UseVisualStyleBackColor = False
         '
         'lblDatosVenta
         '
@@ -159,6 +160,7 @@ Partial Class frmVentasEditar
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(200, 26)
         Me.txtTotal.TabIndex = 50
+        Me.txtTotal.Text = "0.00"
         '
         'lblTotal
         '
@@ -180,6 +182,7 @@ Partial Class frmVentasEditar
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(200, 26)
         Me.dtpFecha.TabIndex = 48
+        Me.dtpFecha.Value = New Date(2024, 9, 10, 17, 48, 19, 0)
         '
         'lblDatosCliente
         '
@@ -338,8 +341,8 @@ Partial Class frmVentasEditar
         Me.Controls.Add(Me.txtIdCliente)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.lblIdCliente)
-        Me.Controls.Add(Me.btnAgregarProducto)
-        Me.Controls.Add(Me.btnEliminarProducto)
+        Me.Controls.Add(Me.btnAgregarListaProducto)
+        Me.Controls.Add(Me.btnEliminarListaProducto)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.lblProductos)
         Me.Controls.Add(Me.btnCancelarVentas)
@@ -359,8 +362,8 @@ Partial Class frmVentasEditar
     Friend WithEvents btnCancelarVentas As Button
     Friend WithEvents lblProductos As Label
     Friend WithEvents dgvProductos As DataGridView
-    Friend WithEvents btnEliminarProducto As Button
-    Friend WithEvents btnAgregarProducto As Button
+    Friend WithEvents btnEliminarListaProducto As Button
+    Friend WithEvents btnAgregarListaProducto As Button
     Friend WithEvents lblDatosVenta As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents lblTotal As Label

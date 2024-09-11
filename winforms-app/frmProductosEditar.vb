@@ -26,7 +26,7 @@ Public Class frmProductosEditar
         End Try
     End Sub
 
-    Private Sub btnEditarProductos_Click(sender As Object, e As EventArgs) Handles btnEditarProductos.Click
+    Private Sub btnConfirmarProductos_Click(sender As Object, e As EventArgs) Handles btnEditarProductos.Click
         Dim lecturaProducto As New LecturaProducto
         Try
             If Producto Is Nothing Then
@@ -49,7 +49,7 @@ Public Class frmProductosEditar
 
             Dim validarPrecio As String = "^\d+(\.\d{2})?$"
             If Not Regex.IsMatch(txtPrecio.Text, validarPrecio) Then
-                lblAdvertencia.Text = "Debe completar con números el campo Precio."
+                lblAdvertencia.Text = "Debe completar solo con números el campo Precio."
                 Return
             End If
 

@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmListaProductosEditar.Designer.vb">
+      <DependentUpon>frmListaProductosEditar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaProductosEditar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmVentasEditar.Designer.vb">
       <DependentUpon>frmVentasEditar.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmListaProductosEditar.resx">
+      <DependentUpon>frmListaProductosEditar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentasEditar.resx">
       <DependentUpon>frmVentasEditar.vb</DependentUpon>
     </EmbeddedResource>

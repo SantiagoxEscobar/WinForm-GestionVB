@@ -26,15 +26,12 @@ Public Class frmClientesEditar
         End Try
     End Sub
 
-    Private Sub btnEditarClientes_Click(sender As Object, e As EventArgs) Handles btnEditarClientes.Click
-        Dim lecturaCliente As New LecturaCliente
+    Private Sub btnConfirmarClientes_Click(sender As Object, e As EventArgs) Handles btnEditarClientes.Click
+        Dim lecturaCliente As New LecturaCliente()
         Try
             If cliente Is Nothing Then
                 cliente = New Cliente()
             End If
-            cliente.cliente = txtCliente.Text
-            cliente.telefono = txtTelefono.Text
-            cliente.correo = txtCorreo.Text
 
             If txtCliente.Text = "" Then
                 lblAdvertencia.Text = "Debe completar el campo Cliente."
@@ -47,9 +44,9 @@ Public Class frmClientesEditar
                 Return
             End If
 
-            Dim regexTel As New Regex("^\+\d{1,3}\s?\d{1,3}\s?\d{3}\s?\d{2}\s?\d{2}$")
+            Dim regexTel As New Regex("^\+?(\d{1,3}\s?){3}\d{2}\s?\d{2}$")
             If Not regexTel.IsMatch(txtTelefono.Text) Then
-                lblAdvertencia.Text = "Debe completar con números el campo Teléfono."
+                lblAdvertencia.Text = "Debe completar con un formato de Teléfono válido."
                 Return
             End If
 
@@ -58,6 +55,10 @@ Public Class frmClientesEditar
                 lblAdvertencia.Text = "Debe completar con un email válido el campo Correo."
                 Return
             End If
+
+            cliente.cliente = txtCliente.Text
+            cliente.telefono = txtTelefono.Text
+            cliente.correo = txtCorreo.Text
 
             If cliente.id <> -1 Then
                 lecturaCliente.editar(cliente)

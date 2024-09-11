@@ -12,3 +12,17 @@ F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.
 F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.dll
 F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.xml
 F:\Proyectos NET\ExamenTACTICASOFT\Examen\lectura-datos\obj\Debug\lectura-datos.pdb
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\lectura-datos.dll
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\lectura-datos.pdb
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\lectura-datos.xml
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\dominio.dll
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\dominio.pdb
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\dominio.xml
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.vbproj.AssemblyReference.cache
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura_datos.Resources.resources
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.vbproj.GenerateResource.cache
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.vbproj.CoreCompileInputs.cache
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.vbproj.CopyComplete
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.dll
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.xml
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.pdb

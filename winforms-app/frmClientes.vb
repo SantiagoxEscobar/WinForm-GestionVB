@@ -101,8 +101,10 @@ Public Class frmClientes
         If rbIdClientes.Checked Then
             If IsNumeric(filtro) Then
                 listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.id = filtro)
+            Else
+                listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro))
             End If
-        ElseIf rbIdClientes.Checked Then
+        ElseIf rbNombreClientes.Checked Then
             listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.cliente.ToUpper.Contains(filtro.ToUpper()) OrElse x.cliente.ToLower.Contains(filtro.ToLower()))
         ElseIf rbTelefonoClientes.Checked Then
             listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.telefono.ToUpper.Contains(filtro.ToUpper()) OrElse x.telefono.ToLower.Contains(filtro.ToLower()))
@@ -110,9 +112,9 @@ Public Class frmClientes
             listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.correo.ToUpper.Contains(filtro.ToUpper()) OrElse x.correo.ToLower.Contains(filtro.ToLower()))
         Else
             listaFiltrada = listaLecturaClientes.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro) OrElse
-                                                        x.cliente.ToUpper().Contains(filtro) OrElse
-                                                        x.telefono.ToUpper().Contains(filtro) OrElse
-                                                        x.correo.ToUpper().Contains(filtro))
+                                                        x.cliente.ToUpper().Contains(filtro) OrElse x.cliente.ToLower.Contains(filtro.ToLower()) OrElse
+                                                        x.telefono.ToUpper().Contains(filtro) OrElse x.telefono.ToLower.Contains(filtro.ToLower()) OrElse
+                                                        x.correo.ToUpper().Contains(filtro) OrElse x.correo.ToLower.Contains(filtro.ToLower()))
         End If
         listaLecturaClientes = listaFiltrada
     End Sub
@@ -121,9 +123,29 @@ Public Class frmClientes
         Dim listaFiltrada As List(Of Cliente)
         Dim opcion As String = cbxOrdenarClientes.SelectedItem.ToString()
         If opcion = "Ascendente" Then
-            listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.id).ToList()
+            If rbIdClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.id).ToList()
+            ElseIf rbNombreClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.cliente).ToList()
+            ElseIf rbTelefonoClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.telefono).ToList()
+            ElseIf rbCorreoClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.correo).ToList()
+            Else
+                listaFiltrada = listaLecturaClientes.OrderBy(Function(x) x.id).ToList()
+            End If
         ElseIf opcion = "Descendente" Then
-            listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.id).ToList()
+            If rbIdClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.id).ToList()
+            ElseIf rbNombreClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.cliente).ToList()
+            ElseIf rbTelefonoClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.telefono).ToList()
+            ElseIf rbCorreoClientes.Checked Then
+                listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.correo).ToList()
+            Else
+                listaFiltrada = listaLecturaClientes.OrderByDescending(Function(x) x.id).ToList()
+            End If
         Else
             Return
         End If

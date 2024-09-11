@@ -27,15 +27,13 @@ Public Class frmVentasDetalle
         Dim lecturaVentasItems As New LecturaVentasItem()
         Dim lecturaVentas As New LecturaVenta()
         Try
-            If dgvDetalle.CurrentRow Is Nothing Then
-                MessageBox.Show("Debe seleccionar una venta para poder modificarla")
-                Return
-            End If
             Dim respuesta As DialogResult = MessageBox.Show("¿Está seguro que desea eliminar la Venta?", "Eliminar Venta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If respuesta = DialogResult.Yes Then
-                Dim eliminado As VentasItem = DirectCast(dgvDetalle.CurrentRow.DataBoundItem, VentasItem)
-                lecturaVentasItems.eliminar(eliminado.id)
-                lecturaVentas.eliminar(eliminado.id)
+                Dim eliminado As Integer = seleccionado.id
+                If Not dgvDetalle.CurrentRow Is Nothing Then
+                    lecturaVentasItems.eliminar(eliminado)
+                End If
+                lecturaVentas.eliminar(eliminado)
                 MessageBox.Show("Producto eliminado correctamente")
                 Dim ventana As New frmVentas()
                 mostrarVentana(ventana)
@@ -48,6 +46,7 @@ Public Class frmVentasDetalle
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         Dim ventana As New frmVentasEditar(seleccionado)
         ventana.ShowDialog()
+        cargarDatos()
     End Sub
 
     Private Sub btnGenerarDetalle_Click(sender As Object, e As EventArgs) Handles btnLimpiarDetalle.Click
@@ -64,7 +63,7 @@ Public Class frmVentasDetalle
         Dim lecturaVentasItem As New LecturaVentasItem
         Try
             ClienteSeleccionado = lecturaCliente.listar(seleccionado.Idcliente)
-            listaLecturaVentasItems = lecturaVentasItem.seleccionar(seleccionado.id)
+            listaLecturaVentasItems = lecturaVentasItem.listar(seleccionado.id)
 
             lblVenta.Text = "Venta N° " + seleccionado.id.ToString()
             lblFecha.Text = seleccionado.fecha

@@ -36,6 +36,7 @@ Public Class frmVentas
     Private Sub btnAgregarVentas_Click(sender As Object, e As EventArgs) Handles btnAgregarVentas.Click
         Dim alta As New frmVentasEditar()
         alta.ShowDialog()
+        cargarDatos()
     End Sub
 
     Private Sub btnDetalleVentas_Click(sender As Object, e As EventArgs) Handles btnDetalleVentas.Click
@@ -71,17 +72,27 @@ Public Class frmVentas
         If rbIdVentas.Checked Then
             If IsNumeric(filtro) Then
                 listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.id = filtro)
+            Else
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro))
             End If
-        ElseIf rbIdVentas.Checked Then
+        ElseIf rbClienteVentas.Checked Then
             If IsNumeric(filtro) Then
                 listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.Idcliente = filtro)
+            Else
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.Idcliente.ToString().ToUpper().Contains(filtro))
             End If
         ElseIf rbFechaVentas.Checked Then
             If IsNumeric(filtro) Then
-                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.Fecha = filtro)
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.fecha = filtro)
+            Else
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.fecha.ToString().ToUpper().Contains(filtro))
             End If
         ElseIf rbTotalVentas.Checked Then
-            listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.Total.ToString.Contains(filtro.ToUpper()) OrElse x.Total.ToString.ToLower.Contains(filtro.ToLower()))
+            If IsNumeric(filtro) Then
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.total = filtro)
+            Else
+                listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.total.ToString.ToUpper().Contains(filtro))
+            End If
         Else
             listaFiltrada = listaLecturaVentas.FindAll(Function(x) x.id.ToString().ToUpper().Contains(filtro) OrElse
                                                         x.Idcliente.ToString().ToUpper().Contains(filtro) OrElse
@@ -95,9 +106,29 @@ Public Class frmVentas
         Dim listaFiltrada As List(Of Venta)
         Dim opcion As String = cbxOrdenarVentas.SelectedItem.ToString()
         If opcion = "Ascendente" Then
-            listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.id).ToList()
+            If rbIdVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.id).ToList()
+            ElseIf rbClienteVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.Idcliente).ToList()
+            ElseIf rbFechaVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.fecha).ToList()
+            ElseIf rbTotalVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.total).ToList()
+            Else
+                listaFiltrada = listaLecturaVentas.OrderBy(Function(x) x.id).ToList()
+            End If
         ElseIf opcion = "Descendente" Then
-            listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.id).ToList()
+            If rbIdVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.id).ToList()
+            ElseIf rbClienteVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.Idcliente).ToList()
+            ElseIf rbFechaVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.fecha).ToList()
+            ElseIf rbTotalVentas.Checked Then
+                listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.total).ToList()
+            Else
+                listaFiltrada = listaLecturaVentas.OrderByDescending(Function(x) x.id).ToList()
+            End If
         Else
             Return
         End If

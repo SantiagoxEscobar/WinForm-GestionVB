@@ -1,10 +1,11 @@
-﻿Imports System.Data.Sql
+﻿Imports System.Configuration
 Imports System.Data.SqlClient
 
 Public Class AccesoDatos
     Private _conexion As SqlConnection
     Private _comando As SqlCommand
     Private _lector As SqlDataReader
+    Private _connectionString As String = String.Empty
 
     Public ReadOnly Property Lector() As SqlDataReader
         Get
@@ -13,7 +14,10 @@ Public Class AccesoDatos
     End Property
 
     Public Sub New()
-        _conexion = New SqlConnection("Server=SR-CPU\MSSQLSERVER2008;database=pruebademo;Integrated Security=True")
+        Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
+        _connectionString = config.ConnectionStrings.ConnectionStrings("pruebademo").ConnectionString
+
+        _conexion = New SqlConnection(_connectionString)
         _comando = New SqlCommand()
     End Sub
 

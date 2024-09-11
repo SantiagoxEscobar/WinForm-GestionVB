@@ -49,7 +49,7 @@ Public Class frmVentasDetalle
         cargarDatos()
     End Sub
 
-    Private Sub btnGenerarDetalle_Click(sender As Object, e As EventArgs) Handles btnLimpiarDetalle.Click
+    Private Sub btnGenerarDetalle_Click(sender As Object, e As EventArgs) Handles btnReporteVenta.Click
 
     End Sub
 

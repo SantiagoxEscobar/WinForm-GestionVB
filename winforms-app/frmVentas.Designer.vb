@@ -33,7 +33,7 @@ Partial Class frmVentas
         Me.btnLimpiarVentas = New System.Windows.Forms.Button()
         Me.lblFiltroVentas = New System.Windows.Forms.Label()
         Me.pnlABM = New System.Windows.Forms.Panel()
-        Me.btnGenerar = New System.Windows.Forms.Button()
+        Me.btnGenerarProductos = New System.Windows.Forms.Button()
         Me.btnDetalleVentas = New System.Windows.Forms.Button()
         Me.btnAgregarVentas = New System.Windows.Forms.Button()
         Me.PnlBuscar = New System.Windows.Forms.Panel()
@@ -42,6 +42,7 @@ Partial Class frmVentas
         Me.cbxOrdenarVentas = New System.Windows.Forms.ComboBox()
         Me.txtBuscarVentas = New System.Windows.Forms.TextBox()
         Me.lblVentas = New System.Windows.Forms.Label()
+        Me.lblReporteProductos = New System.Windows.Forms.Label()
         Me.pnlVentas.SuspendLayout()
         Me.pnlDgv.SuspendLayout()
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,7 +193,8 @@ Partial Class frmVentas
         '
         'pnlABM
         '
-        Me.pnlABM.Controls.Add(Me.btnGenerar)
+        Me.pnlABM.Controls.Add(Me.lblReporteProductos)
+        Me.pnlABM.Controls.Add(Me.btnGenerarProductos)
         Me.pnlABM.Controls.Add(Me.btnDetalleVentas)
         Me.pnlABM.Controls.Add(Me.btnAgregarVentas)
         Me.pnlABM.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -201,22 +203,22 @@ Partial Class frmVentas
         Me.pnlABM.Size = New System.Drawing.Size(640, 50)
         Me.pnlABM.TabIndex = 5
         '
-        'btnGenerar
+        'btnGenerarProductos
         '
-        Me.btnGenerar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenerar.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGenerar.FlatAppearance.BorderSize = 0
-        Me.btnGenerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGenerar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnGenerar.Location = New System.Drawing.Point(413, 10)
-        Me.btnGenerar.Name = "btnGenerar"
-        Me.btnGenerar.Size = New System.Drawing.Size(100, 30)
-        Me.btnGenerar.TabIndex = 2
-        Me.btnGenerar.Text = "Generar"
-        Me.btnGenerar.UseVisualStyleBackColor = False
+        Me.btnGenerarProductos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGenerarProductos.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGenerarProductos.FlatAppearance.BorderSize = 0
+        Me.btnGenerarProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGenerarProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGenerarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerarProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerarProductos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnGenerarProductos.Location = New System.Drawing.Point(413, 10)
+        Me.btnGenerarProductos.Name = "btnGenerarProductos"
+        Me.btnGenerarProductos.Size = New System.Drawing.Size(100, 30)
+        Me.btnGenerarProductos.TabIndex = 2
+        Me.btnGenerarProductos.Text = "Generar"
+        Me.btnGenerarProductos.UseVisualStyleBackColor = False
         '
         'btnDetalleVentas
         '
@@ -325,6 +327,19 @@ Partial Class frmVentas
         Me.lblVentas.Text = "Ventas"
         Me.lblVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'lblReporteProductos
+        '
+        Me.lblReporteProductos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblReporteProductos.AutoSize = True
+        Me.lblReporteProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReporteProductos.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.lblReporteProductos.Location = New System.Drawing.Point(244, 18)
+        Me.lblReporteProductos.Name = "lblReporteProductos"
+        Me.lblReporteProductos.Size = New System.Drawing.Size(163, 15)
+        Me.lblReporteProductos.TabIndex = 34
+        Me.lblReporteProductos.Text = "Reporte Productos Vendidos"
+        Me.lblReporteProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,6 +357,7 @@ Partial Class frmVentas
         Me.pnlFiltro.ResumeLayout(False)
         Me.pnlFiltro.PerformLayout()
         Me.pnlABM.ResumeLayout(False)
+        Me.pnlABM.PerformLayout()
         Me.PnlBuscar.ResumeLayout(False)
         Me.PnlBuscar.PerformLayout()
         Me.ResumeLayout(False)
@@ -367,5 +383,6 @@ Partial Class frmVentas
     Friend WithEvents dgvVentas As DataGridView
     Friend WithEvents btnBuscar As Button
     Friend WithEvents rbClienteVentas As RadioButton
-    Friend WithEvents btnGenerar As Button
+    Friend WithEvents btnGenerarProductos As Button
+    Friend WithEvents lblReporteProductos As Label
 End Class

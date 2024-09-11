@@ -38,9 +38,13 @@ Public Class frmClientesEditar
                 Return
             End If
 
-            Dim validarCliente As String = "^[A-Z][A-Za-z0-9]*$"
+            Dim validarCliente As String = "^[a-zA-Z0-9]{4,16}$"
             If Not Regex.IsMatch(txtCliente.Text, validarCliente) Then
-                lblAdvertencia.Text = "Debe completar con un formato válido el campo Cliente."
+                If txtCliente.Text.Length < 4 OrElse txtCliente.Text.Length > 16 Then
+                    lblAdvertencia.Text = "El nombre del cliente debe tener entre 4 y 16 caracteres."
+                Else
+                    lblAdvertencia.Text = "El formato del nombre de cliente es inválido. Solo se permiten letras y números."
+                End If
                 Return
             End If
 

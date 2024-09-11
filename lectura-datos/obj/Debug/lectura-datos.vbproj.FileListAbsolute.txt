@@ -26,3 +26,5 @@ F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.vbpr
 F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.dll
 F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.xml
 F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\obj\Debug\lectura-datos.pdb
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Proyectos GitHub\WinForm-GestionVB\lectura-datos\bin\Debug\System.Configuration.ConfigurationManager.xml

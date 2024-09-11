@@ -37,13 +37,14 @@ Partial Class frmVentasDetalle
         Me.dgvDetalle = New System.Windows.Forms.DataGridView()
         Me.pnlABM = New System.Windows.Forms.Panel()
         Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnLimpiarDetalle = New System.Windows.Forms.Button()
+        Me.btnReporteVenta = New System.Windows.Forms.Button()
         Me.btnElminarDetalle = New System.Windows.Forms.Button()
         Me.btnVolverDetalle = New System.Windows.Forms.Button()
         Me.PnlBuscar = New System.Windows.Forms.Panel()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.lblCliente = New System.Windows.Forms.Label()
         Me.lblVenta = New System.Windows.Forms.Label()
+        Me.lblReporteVenta = New System.Windows.Forms.Label()
         Me.pnlDetalle.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.pnl1.SuspendLayout()
@@ -227,8 +228,9 @@ Partial Class frmVentasDetalle
         '
         'pnlABM
         '
+        Me.pnlABM.Controls.Add(Me.lblReporteVenta)
         Me.pnlABM.Controls.Add(Me.btnEditar)
-        Me.pnlABM.Controls.Add(Me.btnLimpiarDetalle)
+        Me.pnlABM.Controls.Add(Me.btnReporteVenta)
         Me.pnlABM.Controls.Add(Me.btnElminarDetalle)
         Me.pnlABM.Controls.Add(Me.btnVolverDetalle)
         Me.pnlABM.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -252,22 +254,22 @@ Partial Class frmVentasDetalle
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
         '
-        'btnLimpiarDetalle
+        'btnReporteVenta
         '
-        Me.btnLimpiarDetalle.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnLimpiarDetalle.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLimpiarDetalle.FlatAppearance.BorderSize = 0
-        Me.btnLimpiarDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLimpiarDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnLimpiarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiarDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLimpiarDetalle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btnLimpiarDetalle.Location = New System.Drawing.Point(413, 10)
-        Me.btnLimpiarDetalle.Name = "btnLimpiarDetalle"
-        Me.btnLimpiarDetalle.Size = New System.Drawing.Size(100, 30)
-        Me.btnLimpiarDetalle.TabIndex = 4
-        Me.btnLimpiarDetalle.Text = "Generar"
-        Me.btnLimpiarDetalle.UseVisualStyleBackColor = False
+        Me.btnReporteVenta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnReporteVenta.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReporteVenta.FlatAppearance.BorderSize = 0
+        Me.btnReporteVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReporteVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnReporteVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteVenta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btnReporteVenta.Location = New System.Drawing.Point(413, 10)
+        Me.btnReporteVenta.Name = "btnReporteVenta"
+        Me.btnReporteVenta.Size = New System.Drawing.Size(100, 30)
+        Me.btnReporteVenta.TabIndex = 4
+        Me.btnReporteVenta.Text = "Generar"
+        Me.btnReporteVenta.UseVisualStyleBackColor = False
         '
         'btnElminarDetalle
         '
@@ -358,6 +360,19 @@ Partial Class frmVentasDetalle
         Me.lblVenta.Text = "Venta N° "
         Me.lblVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'lblReporteVenta
+        '
+        Me.lblReporteVenta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblReporteVenta.AutoSize = True
+        Me.lblReporteVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReporteVenta.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.lblReporteVenta.Location = New System.Drawing.Point(322, 18)
+        Me.lblReporteVenta.Name = "lblReporteVenta"
+        Me.lblReporteVenta.Size = New System.Drawing.Size(85, 15)
+        Me.lblReporteVenta.TabIndex = 33
+        Me.lblReporteVenta.Text = "Reporte Venta"
+        Me.lblReporteVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmVentasDetalle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,6 +392,7 @@ Partial Class frmVentasDetalle
         Me.pnlDgv.ResumeLayout(False)
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlABM.ResumeLayout(False)
+        Me.pnlABM.PerformLayout()
         Me.PnlBuscar.ResumeLayout(False)
         Me.PnlBuscar.PerformLayout()
         Me.ResumeLayout(False)
@@ -389,7 +405,7 @@ Partial Class frmVentasDetalle
     Friend WithEvents btnVolverDetalle As Button
     Friend WithEvents pnlDgv As Panel
     Friend WithEvents dgvDetalle As DataGridView
-    Friend WithEvents btnLimpiarDetalle As Button
+    Friend WithEvents btnReporteVenta As Button
     Friend WithEvents pnl1 As Panel
     Friend WithEvents lblCorreo As Label
     Friend WithEvents lblCorreoCliente As Label
@@ -405,4 +421,5 @@ Partial Class frmVentasDetalle
     Friend WithEvents lblTelefono As Label
     Friend WithEvents btnElminarDetalle As Button
     Friend WithEvents btnEditar As Button
+    Friend WithEvents lblReporteVenta As Label
 End Class

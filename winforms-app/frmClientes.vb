@@ -82,6 +82,10 @@ Public Class frmClientes
         Dim lecturaCliente As New LecturaCliente()
         Try
             listaLecturaClientes = lecturaCliente.listar()
+
+            If listaLecturaClientes Is Nothing Then
+                Return
+            End If
             dgvClientes.DataSource = listaLecturaClientes
         Catch ex As Exception
             MessageBox.Show(ex.ToString())

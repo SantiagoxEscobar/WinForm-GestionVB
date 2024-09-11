@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Proyectos GitHub\\WinForm-GestionVB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA20EB31-500C-453F-97DF-58ACB76057C0}|winforms-app\\winforms-app.vbproj|f:\\proyectos github\\winform-gestionvb\\winforms-app\\frmreporteventa.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{FA20EB31-500C-453F-97DF-58ACB76057C0}|winforms-app\\winforms-app.vbproj|solutionrelative:winforms-app\\frmreporteventa.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmReporteVenta.vb [Design]",
+              "DocumentMoniker": "F:\\Proyectos GitHub\\WinForm-GestionVB\\winforms-app\\frmReporteVenta.vb",
+              "RelativeDocumentMoniker": "winforms-app\\frmReporteVenta.vb",
+              "ToolTip": "F:\\Proyectos GitHub\\WinForm-GestionVB\\winforms-app\\frmReporteVenta.vb [Design]",
+              "RelativeToolTip": "winforms-app\\frmReporteVenta.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-09-11T07:09:51.541Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
